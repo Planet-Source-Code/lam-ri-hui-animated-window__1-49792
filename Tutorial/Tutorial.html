@@ -1,0 +1,114 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Animated Window - Tutorial</title>
+</head>
+
+<body bgproperties="fixed" background="bg.GIF">
+
+<p align="center"><u><b><font size="6" face="Comic Sans MS">Animated Window - 
+Tutorial</font></b></u></p>
+<p><font face="Comic Sans MS">Add special effect to your form when it is showing 
+and hiding! 6 types of effects can be applied. They are roll left to right, roll 
+right to left, roll top to bottom, roll bottom to top, expand window outward and 
+fade window. This program shows how to add these fancy effects. Make sure you 
+have Windows 2000 and later or Windows 98 and later running before running this 
+program. The program is well commented and a tutorial is included. Your comments 
+and votes is the way you repay me for my work.</font></p>
+<p><font face="Comic Sans MS">To add special effects when showing your form, 1 
+API is needed :</font></p>
+<p align="center"><font face="Comic Sans MS" size="4">AnimateWindow</font></p>
+<p><font face="Comic Sans MS">The AnimateWindow API is easy to use. It is 
+contained in the &quot;user32.dll&quot; library. To call this API, first you need to 
+declare it :</font></p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+  <tr>
+    <td width="100%"><font face="Comic Sans MS">Private Declare Function 
+    AnimateWindow Lib &quot;user32&quot; (ByVal hwnd As Long, ByVal dwTime As Long, ByVal 
+    dwFlags As Long) As Boolean</font></td>
+  </tr>
+</table>
+<p><font face="Comic Sans MS">You will call the API like this :</font></p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber3">
+  <tr>
+    <td width="100%"><font face="Comic Sans MS">AnimateWindow hWnd, dwTime, 
+    dwFlags</font></td>
+  </tr>
+</table>
+<p><font face="Comic Sans MS">The parameters for this API :</font></p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+  <tr>
+    <td width="100%"><font face="Comic Sans MS">· hwnd<br>
+    [in] Handle to the window to animate. The calling thread must own this 
+    window.<br>
+    <br>
+    · dwTime<br>
+    [in] Specifies how long it takes to play the animation, in milliseconds. 
+    Typically, an animation takes 200 milliseconds to play.<br>
+    <br>
+    · dwFlags<br>
+    [in] Specifies the type of animation. This parameter can be one or more of 
+    the following values.</font><p><font face="Comic Sans MS">&amp;H40000<br>
+    Uses slide animation. By default, roll animation is used. This flag is 
+    ignored when used with &amp;H10.</font></p>
+    <p><font face="Comic Sans MS">&amp;H20000<br>
+    Activates the window. Do not use this value with &amp;H10000.</font></p>
+    <p><font face="Comic Sans MS">&amp;H80000<br>
+    Uses a fade effect. This flag can be used only if hwnd is a top-level 
+    window.</font></p>
+    <p><font face="Comic Sans MS">&amp;H10000<br>
+    Hides the window. By default, the window is shown.</font></p>
+    <p><font face="Comic Sans MS">&amp;H10<br>
+    Makes the window appear to collapse inward if &amp;H10000 is used or expand 
+    outward if the &amp;H10000 is not used.</font></p>
+    <p><font face="Comic Sans MS">&amp;H1<br>
+    Animates the window from left to right. This flag can be used with roll or 
+    slide animation. It is ignored when used with &amp;H10 or &amp;H80000.</font></p>
+    <p><font face="Comic Sans MS">&amp;H2<br>
+    Animates the window from right to left. This flag can be used with roll or 
+    slide animation. It is ignored when used with &amp;H10 or &amp;H80000.</font></p>
+    <p><font face="Comic Sans MS">&amp;H4<br>
+    Animates the window from top to bottom. This flag can be used with roll or 
+    slide animation. It is ignored when used with &amp;H10 or &amp;H80000.</font></p>
+    <p><font face="Comic Sans MS">&amp;H8<br>
+    Animates the window from bottom to top. This flag can be used with roll or 
+    slide animation. It is ignored when used with &amp;H10 or &amp;H80000.</font></td>
+  </tr>
+</table>
+<p><font face="Comic Sans MS">The return values for this API once it is executed 
+is :</font></p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber4">
+  <tr>
+    <td width="100%"><font face="Comic Sans MS">If the function succeeds, the 
+    return value is nonzero.<br>
+    <br>
+    If the function fails, the return value is zero. The function will fail in 
+    the following situations: <br>
+    <br>
+    The window uses the window region. <br>
+    The window is already visible and you are trying to show the window. <br>
+    The window is already hidden and you are trying to hide the window. <br>
+    To get extended error information, call the GetLastError function. </font>
+    </td>
+  </tr>
+</table>
+<p><font face="Comic Sans MS">Lastly, wish you have good experiences programming 
+with Visual Basic!</font></p>
+<p><font face="Comic Sans MS">What I Would Like You to Do<br>
+- Leave comments about this program at
+<a href="http://www.planetsourcecode.com/vb/">www.planetsourcecode.com/vb/</a><br>
+- Vote for this program at <a href="http://www.planetsourcecode.com/vb/">
+www.planetsourcecode.com/vb/</a><br>
+- Visit my website <a href="http://www.geocities.com/lamrihui/">
+www.geocities.com/lamrihui/</a></font></p>
+<hr>
+<p align="center"><font face="Arial" size="2">All contents </font>
+<font size="2">©</font><font face="Arial" size="2"> Lam Ri Hui 2003</font></p>
+
+</body>
+
+</html>
